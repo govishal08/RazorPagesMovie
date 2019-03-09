@@ -14,7 +14,8 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
-   
+  displayName: 'dotnet build $(buildConfiguration)'
+  dotnet publish --output $(Build.ArtifactStagingDirectory)
+     
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
