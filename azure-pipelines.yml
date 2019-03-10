@@ -19,5 +19,5 @@ steps:
     command: publish
     arguments: '--configuration $(BuildConfiguration)'
 
-  task: PublishPipelineArtifact@0
-    displayName: 'Publish Pipeline Artifact'
+- task: PublishPipelineArtifact@0
+  displayName: 'Publish Pipeline Artifact'
