@@ -19,5 +19,11 @@ steps:
     command: publish
     arguments: '--configuration $(BuildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+
 - task: PublishPipelineArtifact@0
   displayName: 'Publish Pipeline Artifact'
